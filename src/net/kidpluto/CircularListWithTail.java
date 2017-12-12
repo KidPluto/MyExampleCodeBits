@@ -7,7 +7,7 @@ import java.util.*;
  *
  * Example:  node_1 points_to node_2 points_to node_3 points_to node_4 points_to node_5 points_to node_2 <br>
  *
- * Original code by Stephan van Hulst <br>
+ * Original code by Stephan van Hulst https://coderanch.com/u/233178/Stephan-van-Hulst <br>
  *
  * @param <T> The type of the elements of the list.
  */
@@ -19,7 +19,7 @@ public final class CircularListWithTail<T> extends AbstractSequentialList<T> {
     /**
      * Creates an empty circular list.
      */
-    public CircularListWithTail() {
+    private CircularListWithTail() {
         actualList = new LinkedList<>();
     }
 
@@ -65,7 +65,7 @@ public final class CircularListWithTail<T> extends AbstractSequentialList<T> {
      *
      * @throws IndexOutOfBoundsException If startIndex is negative.
      */
-    public void setCircularPartStartIndex(int startIndex) {
+    private void setCircularPartStartIndex(int startIndex) {
         if (startIndex < 0)
             throw new IndexOutOfBoundsException("Index must not be negative.");
 
