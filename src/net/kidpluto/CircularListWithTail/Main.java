@@ -1,7 +1,5 @@
 package net.kidpluto.CircularListWithTail;
 
-import net.kidpluto.CircularListWithTail.CircularListWithTail;
-
 import java.util.ArrayList;
 import java.util.ListIterator;
 
@@ -9,19 +7,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello World!");
-
         final int SIZE = 10;
 
-        // Try and create circular list with tail
+        // Create and populate ArrayList
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         for (int i = 0; i < SIZE; i++) {
             arrayList.add(100 + i);
         }
-
+        // Create CLWT from ArrayList
         CircularListWithTail clwt = new CircularListWithTail( arrayList);
 
-        System.out.println("Size is: " + clwt.size());
+        System.out.println("Create circular list with tail, with size of: " + clwt.size());
 
 //        // What happens when the ctor, with just the start index, is used?
 //        // There is no data, so how can you iterate

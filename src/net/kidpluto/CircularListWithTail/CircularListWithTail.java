@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * A sequential list that will start repeating itself after a certain index. <br>
  *
- * Example:  node_1 points_to node_2 points_to node_3 points_to node_4 points_to node_5 points_to node_2 <br>
+ * Example:  node_1 --> node_2 --> node_3 --> node_4 --> node_5 --> node_2 <br>
  *
  * Original code by Stephan van Hulst https://coderanch.com/u/233178/Stephan-van-Hulst <br>
  *
