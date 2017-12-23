@@ -17,6 +17,7 @@ class CircularListWithTailTest {
     private static ArrayList<Integer> arrayList;
 
     @org.junit.jupiter.api.BeforeAll
+    // Create ArrayList, to be used as parameter for ctors
     static void beforeAll() {
         arrayList = new ArrayList<Integer>();
         for (int i = 0; i < SIZE; i++) {
@@ -25,21 +26,20 @@ class CircularListWithTailTest {
     }
 
     @org.junit.jupiter.api.Test
+    // Tests ctor using ArrayList
     void ctorTakesCollection() {
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
-        for (int i = 0; i < SIZE; i++) {
-            arrayList.add(100 + i);
-        }
         CircularListWithTail clwt = new CircularListWithTail( arrayList);
         assertTrue(clwt.size() == SIZE);
         assertTrue((int)clwt.get(1) == 101);
     }
 
     @org.junit.jupiter.api.Test
+    // Test ctor using just circular part start index
     // I don't understand this ctor.  It take a starting value, but returns no list.
     void ctorTakesCircularPartStartIndex() {
         final int SIZE = 5;
         CircularListWithTail clwt = new CircularListWithTail( SIZE);
+        // Check for size of zero
         assertTrue( clwt.size() == 0);
 
         // List is of size 0, this code will do nothing, but also not break.
@@ -51,32 +51,32 @@ class CircularListWithTailTest {
     }
 
     @org.junit.jupiter.api.Test
+    // Test ctor with ArrayList and circular part start index
     void ctorTakesCircularPartStartIndexAndCollection() {
-
         CircularListWithTail clwt = new CircularListWithTail( STARTINDEX, arrayList);
         assertTrue(clwt.size() == SIZE);
         assertTrue(clwt.getCircularPartStartIndex() == STARTINDEX);
         assertTrue((int)clwt.get(STARTINDEX) == 105);
+        assertTrue((int)clwt.get(STARTINDEX+1) == 106);
     }
 
     @org.junit.jupiter.api.Test
-    // Ensure that a negative value for start index throws IndexOutOfBounds
+    // Test ctor with ArrayList and negative value for circular part start point
     void ctorTakesCircularPartStartIndex_Negative_AndCollection() {
-//        final int SIZE = 10;
         final int STARTINDEX = -5;
-//        ArrayList<Integer> arrayList = new ArrayList<Integer>();
-//        for (int i = 0; i < SIZE; i++) {
-//            arrayList.add(100 + i);
-//        }
+        // Ensure that IndexOutOfBoundsException is thrown
         assertThrows(IndexOutOfBoundsException.class, () -> {new CircularListWithTail(STARTINDEX, arrayList);});
     }
 
     @org.junit.jupiter.api.Test
+    // Test the getter for circular part start index
     void getCircularPartStartIndex() {
-
+        CircularListWithTail clwt = new CircularListWithTail( STARTINDEX, arrayList);
+        assertTrue(clwt.getCircularPartStartIndex() == STARTINDEX);
     }
 
     @org.junit.jupiter.api.Test
+    // Test the getting for size
     void size() {
         CircularListWithTail clwt = new CircularListWithTail( arrayList);
         assertTrue(clwt.size() == SIZE);
