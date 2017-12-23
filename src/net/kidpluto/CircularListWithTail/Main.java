@@ -19,23 +19,6 @@ public class Main {
 
         System.out.println("Create circular list with tail, with size of: " + clwt.size());
 
-//        // What happens when the ctor, with just the start index, is used?
-//        // There is no data, so how can you iterate
-//        CircularListWithTail clwt_2 = new CircularListWithTail(5);
-//        // Correctly says size is 0
-//        System.out.println("Size is: " + clwt_2.size());
-//        // How about iteraing?
-//        // Correctly doesn't do anything. - good junit
-//        ListIterator<CircularListWithTail> iterator_2 = clwt_2.listIterator();
-//        while (iterator_2.hasNext()) {
-//            System.out.println(" " + iterator_2.next());
-//        }
-
-//        // How do I compare two elements?
-//        Integer int_1 = clwt.get(2);
-//        Integer int_2 = clwt.get(2);
-//        Integer int_3 =
-
 
         // What happens before setCircularPartStartIndex
         // Correctly just goes to the end of the list - good junit
