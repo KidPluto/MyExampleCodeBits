@@ -11,18 +11,28 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CircularListWithTailTest {
 
+    final static int SIZE = 10;
+    final static int STARTINDEX = 5;
+
+    private static ArrayList<Integer> arrayList;
+
+    @org.junit.jupiter.api.BeforeAll
+    static void beforeAll() {
+        arrayList = new ArrayList<Integer>();
+        for (int i = 0; i < SIZE; i++) {
+            arrayList.add(100 + i);
+        }
+    }
+
     @org.junit.jupiter.api.Test
     void ctorTakesCollection() {
-        final int SIZE = 10;
         ArrayList<Integer> arrayList = new ArrayList<Integer>();
         for (int i = 0; i < SIZE; i++) {
             arrayList.add(100 + i);
         }
         CircularListWithTail clwt = new CircularListWithTail( arrayList);
-        ListIterator<CircularListWithTail> iter = clwt.listIterator();
-        while (iter.hasNext()) {
-            System.out.println(" " + iter.next());
-        }
+        assertTrue(clwt.size() == SIZE);
+        assertTrue((int)clwt.get(1) == 101);
     }
 
     @org.junit.jupiter.api.Test
@@ -30,7 +40,6 @@ class CircularListWithTailTest {
     void ctorTakesCircularPartStartIndex() {
         final int SIZE = 5;
         CircularListWithTail clwt = new CircularListWithTail( SIZE);
-        System.out.println("Ok, confused.  Sending in value of 5, the list I get is: " + clwt.size());
         assertTrue( clwt.size() == 0);
 
         // List is of size 0, this code will do nothing, but also not break.
@@ -43,14 +52,23 @@ class CircularListWithTailTest {
 
     @org.junit.jupiter.api.Test
     void ctorTakesCircularPartStartIndexAndCollection() {
-        final int SIZE = 10;
-        final int STARTINDEX = 5;
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
-        for (int i = 0; i < SIZE; i++) {
-            arrayList.add(100 + i);
-        }
+
         CircularListWithTail clwt = new CircularListWithTail( STARTINDEX, arrayList);
-        assertTrue(TRUE);
+        assertTrue(clwt.size() == SIZE);
+        assertTrue(clwt.getCircularPartStartIndex() == STARTINDEX);
+        assertTrue((int)clwt.get(STARTINDEX) == 105);
+    }
+
+    @org.junit.jupiter.api.Test
+    // Ensure that a negative value for start index throws IndexOutOfBounds
+    void ctorTakesCircularPartStartIndex_Negative_AndCollection() {
+//        final int SIZE = 10;
+        final int STARTINDEX = -5;
+//        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+//        for (int i = 0; i < SIZE; i++) {
+//            arrayList.add(100 + i);
+//        }
+        assertThrows(IndexOutOfBoundsException.class, () -> {new CircularListWithTail(STARTINDEX, arrayList);});
     }
 
     @org.junit.jupiter.api.Test
@@ -60,11 +78,6 @@ class CircularListWithTailTest {
 
     @org.junit.jupiter.api.Test
     void size() {
-        final int SIZE = 10;
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
-        for (int i = 0; i < SIZE; i++) {
-            arrayList.add(100 + i);
-        }
         CircularListWithTail clwt = new CircularListWithTail( arrayList);
         assertTrue(clwt.size() == SIZE);
     }
