@@ -1,4 +1,4 @@
-package net.kidpluto;
+package net.kidpluto.CircularListWithTail;
 
 import java.util.*;
 

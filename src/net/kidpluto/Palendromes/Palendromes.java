@@ -1,4 +1,4 @@
-package net.kidpluto;
+package net.kidpluto.Palendromes;
 
 import java.util.ArrayList;
 import java.util.Iterator;

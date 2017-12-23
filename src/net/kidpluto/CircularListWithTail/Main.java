@@ -1,4 +1,6 @@
-package net.kidpluto;
+package net.kidpluto.CircularListWithTail;
+
+import net.kidpluto.CircularListWithTail.CircularListWithTail;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
