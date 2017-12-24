@@ -94,20 +94,57 @@ class CircularListWithTailTest {
     }
 
     @org.junit.jupiter.api.Test
+        // Test
+    void add() {
+    }
+
+    @org.junit.jupiter.api.Test
+        // Test
+    void remove() {
+    }
+
+    @org.junit.jupiter.api.Test
+        // Test
+    void set() {
+    }
+
+    @org.junit.jupiter.api.Test
     //
     void listIterator() {
+
+        // This test is intended to show that the iterator will go from the last element
+        // in the list to the point where the circular list starts.
+        // This will result in an infinate loop, so using another counter to not know when
+        // to stop looping.
+        // This seems to work, except that .nextIndex is return an incorrect value after
+        // the first iteration.
+        // But somehow this is still working correctly
+        //   clwt.get(iter.nextIndex())
+        //
         CircularListWithTail clwt = new CircularListWithTail( STARTINDEX, arrayList);
         int count = 0;
         int stop = 12;
         Integer int_1 = 0;
         ListIterator<CircularListWithTail> iter = clwt.listIterator();
         while (iter.hasNext()) {
-            count++;
-//            iter.next();
-            int_1 = (Integer)iter.next().get(iter.nextIndex());
-            // Ensure against infinite loop
-            if (count == stop) {break;}
+            System.out.println("nextIndex is: " + iter.nextIndex());
+            System.out.println("Value is: " + clwt.get(iter.nextIndex()));
+            iter.next();
+            if (++count == stop) {break;}
         }
-        System.out.println("we have : " + int_1);
+        // Need tests for:
+
+        // hasPrevious
+        // previous
+        // previousIndex
+        // When iterating backwards, the iterator will eventually move through the non-circular part and stop before the first element.
+
+        // add
+
+        // remove
+
+        // set
+
+
     }
 }
