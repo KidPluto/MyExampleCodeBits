@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * A sequential list that will start repeating itself after a certain index. <br>
  *
- * Example:  node_1 --> node_2 --> node_3 --> node_4 --> node_5 --> node_2 <br>
+ * Example:  node_1 --> node_2 --> node_3 --> node_4 --> node_5 --> node_2 ... <br>
  *
  * Original code by Stephan van Hulst https://coderanch.com/u/233178/Stephan-van-Hulst <br>
  *
@@ -201,5 +201,13 @@ public final class CircularListWithTail<T> extends AbstractSequentialList<T> {
                 actualIterator.set(e);
             }
         };
+    }
+    @Override
+    public String toString(){
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i < 10; i++) {
+            sb.append(actualList.get(i));
+        }
+        return sb.toString();
     }
 }

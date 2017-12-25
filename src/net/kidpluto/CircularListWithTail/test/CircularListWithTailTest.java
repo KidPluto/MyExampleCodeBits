@@ -103,24 +103,25 @@ class CircularListWithTailTest {
     void testIteratorRemove() {
     }
 
-    @org.junit.jupiter.api.Test
-        // Test
-    void testIteratorSet() {
-        CircularListWithTail clwt = new CircularListWithTail( arrayList);
-        int indexToReplace = 7;
-        ArrayList<Integer> newArrayList = new ArrayList<Integer>();
-        newArrayList.add(new Integer(27));
-        CircularListWithTail newClwt = new CircularListWithTail( newArrayList);
-
-        ListIterator<CircularListWithTail> iter = clwt.listIterator();
-        while (iter.hasNext()) {
-            iter.next();
-            if (iter.nextIndex() == indexToReplace) {
-                iter.set(newClwt);
-            }
-        }
-        System.out.println("testIteratorSet: " + clwt.toString());
-    }
+//    @org.junit.jupiter.api.Test
+//        // Test
+//    void testIteratorSet() {
+//        CircularListWithTail clwt = new CircularListWithTail( arrayList);
+//        int indexToReplace = 7;
+//        Integer newElement = new Integer(27);
+////        ArrayList<Integer> newArrayList = new ArrayList<Integer>();
+////        newArrayList.add(new Integer(27));
+////        CircularListWithTail newClwt = new CircularListWithTail( newArrayList);
+//
+//        ListIterator<CircularListWithTail> iter = clwt.listIterator();
+//        while (iter.hasNext()) {
+//            iter.next();
+//            if (iter.nextIndex() == indexToReplace) {
+//                iter.set(newElement);
+//            }
+//        }
+//        System.out.println("testIteratorSet: " + clwt.toString());
+//    }
 
     @org.junit.jupiter.api.Test
         // Test
@@ -142,20 +143,33 @@ class CircularListWithTailTest {
     void testIteratingBackwardsToTheStart() {
     }
 
+    @org.junit.jupiter.api.Test
+    // Test
+    void testGetActualIndex() {
+
+    }
+
+    @org.junit.jupiter.api.Test
+        // Test
+    void testToString() {
+        CircularListWithTail clwt = new CircularListWithTail( arrayList);
+        System.out.println("To string: " + clwt.toString());
+    }
 
 //    @org.junit.jupiter.api.Test
 //    //
 //    void listIterator() {
-//
-//        // This test is intended to show that the iterator will go from the last element
-//        // in the list to the point where the circular list starts.
-//        // This will result in an infinate loop, so using another counter to not know when
-//        // to stop looping.
-//        // This seems to work, except that .nextIndex is return an incorrect value after
-//        // the first iteration.
-//        // But somehow this is still working correctly
-//        //   clwt.get(iter.nextIndex())
-//        //
+
+        // This test is intended to show that the iterator will go from the last element
+        // in the list to the point where the circular list starts.
+        // This will result in an infinate loop, so using another counter to not know when
+        // to stop looping.
+        // This seems to work, except that .nextIndex is returning an incorrect value after
+        // the first iteration.
+        // But somehow this is still working correctly
+        //   clwt.get(iter.nextIndex())
+        // I think the "issue" is with how getActualIndex is coded
+        //
 //        CircularListWithTail clwt = new CircularListWithTail( STARTINDEX, arrayList);
 //        int count = 0;
 //        int stop = 12;
