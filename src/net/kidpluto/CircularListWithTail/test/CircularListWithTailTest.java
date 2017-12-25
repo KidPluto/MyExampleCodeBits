@@ -29,7 +29,7 @@ class CircularListWithTailTest {
     @org.junit.jupiter.api.Test
     // Tests ctor using ArrayList
     // Circular list, with no tail is created
-    void ctorTakesCollection() {
+    void testCtorTakingCollectionOnly() {
         CircularListWithTail clwt = new CircularListWithTail( arrayList);
         assertTrue(clwt.size() == SIZE);
         assertTrue((int)clwt.get(1) == 101);
@@ -47,7 +47,7 @@ class CircularListWithTailTest {
     @org.junit.jupiter.api.Test
     // Test ctor using just circular part start index
     // I don't understand this ctor.  It take a starting value, but returns no list.
-    void ctorTakesCircularPartStartIndex() {
+    void testCtorTakesCircularPartStartIndexOnly() {
         final int SIZE = 5;
         CircularListWithTail clwt = new CircularListWithTail( SIZE);
         // Check for size of zero
@@ -63,7 +63,7 @@ class CircularListWithTailTest {
 
     @org.junit.jupiter.api.Test
     // Test ctor with ArrayList and circular part start index
-    void ctorTakesCircularPartStartIndexAndCollection() {
+    void testCtorTakesCircularPartStartIndexAndCollection() {
         CircularListWithTail clwt = new CircularListWithTail( STARTINDEX, arrayList);
         assertTrue(clwt.size() == SIZE);
         assertTrue(clwt.getCircularPartStartIndex() == STARTINDEX);
@@ -73,7 +73,7 @@ class CircularListWithTailTest {
 
     @org.junit.jupiter.api.Test
     // Test ctor with ArrayList and negative value for circular part start point
-    void ctorTakesCircularPartStartIndex_Negative_AndCollection() {
+    void testCtorTakesCircularPartStartIndex_Negative_AndCollection() {
         final int STARTINDEX = -5;
         // Ensure that IndexOutOfBoundsException is thrown
         assertThrows(IndexOutOfBoundsException.class, () -> {new CircularListWithTail(STARTINDEX, arrayList);});
@@ -81,70 +81,91 @@ class CircularListWithTailTest {
 
     @org.junit.jupiter.api.Test
     // Test the getter for circular part start index
-    void getCircularPartStartIndex() {
+    void testGetCircularPartStartIndex() {
         CircularListWithTail clwt = new CircularListWithTail( STARTINDEX, arrayList);
         assertTrue(clwt.getCircularPartStartIndex() == STARTINDEX);
     }
 
     @org.junit.jupiter.api.Test
     // Test the getting for size
-    void size() {
+    void testGetSize() {
         CircularListWithTail clwt = new CircularListWithTail( arrayList);
         assertTrue(clwt.size() == SIZE);
     }
 
     @org.junit.jupiter.api.Test
         // Test
-    void add() {
+    void testIteraforAdd() {
     }
 
     @org.junit.jupiter.api.Test
         // Test
-    void remove() {
+    void testIteratorRemove() {
     }
 
     @org.junit.jupiter.api.Test
         // Test
-    void set() {
-    }
+    void testIteratorSet() {
+        CircularListWithTail clwt = new CircularListWithTail( arrayList);
+        int indexToReplace = 7;
+        ArrayList<Integer> newArrayList = new ArrayList<Integer>();
+        newArrayList.add(new Integer(27));
+        CircularListWithTail newClwt = new CircularListWithTail( newArrayList);
 
-    @org.junit.jupiter.api.Test
-    //
-    void listIterator() {
-
-        // This test is intended to show that the iterator will go from the last element
-        // in the list to the point where the circular list starts.
-        // This will result in an infinate loop, so using another counter to not know when
-        // to stop looping.
-        // This seems to work, except that .nextIndex is return an incorrect value after
-        // the first iteration.
-        // But somehow this is still working correctly
-        //   clwt.get(iter.nextIndex())
-        //
-        CircularListWithTail clwt = new CircularListWithTail( STARTINDEX, arrayList);
-        int count = 0;
-        int stop = 12;
-        Integer int_1 = 0;
         ListIterator<CircularListWithTail> iter = clwt.listIterator();
         while (iter.hasNext()) {
-            System.out.println("nextIndex is: " + iter.nextIndex());
-            System.out.println("Value is: " + clwt.get(iter.nextIndex()));
             iter.next();
-            if (++count == stop) {break;}
+            if (iter.nextIndex() == indexToReplace) {
+                iter.set(newClwt);
+            }
         }
-        // Need tests for:
-
-        // hasPrevious
-        // previous
-        // previousIndex
-        // When iterating backwards, the iterator will eventually move through the non-circular part and stop before the first element.
-
-        // add
-
-        // remove
-
-        // set
-
-
+        System.out.println("testIteratorSet: " + clwt.toString());
     }
+
+    @org.junit.jupiter.api.Test
+        // Test
+    void testIteratorHasPrevious() {
+    }
+
+    @org.junit.jupiter.api.Test
+        // Test
+    void testIteratorPrevious() {
+    }
+
+    @org.junit.jupiter.api.Test
+        // Test
+    void testIteratorPreviousIndex() {
+    }
+
+    @org.junit.jupiter.api.Test
+        // Test
+    void testIteratingBackwardsToTheStart() {
+    }
+
+
+//    @org.junit.jupiter.api.Test
+//    //
+//    void listIterator() {
+//
+//        // This test is intended to show that the iterator will go from the last element
+//        // in the list to the point where the circular list starts.
+//        // This will result in an infinate loop, so using another counter to not know when
+//        // to stop looping.
+//        // This seems to work, except that .nextIndex is return an incorrect value after
+//        // the first iteration.
+//        // But somehow this is still working correctly
+//        //   clwt.get(iter.nextIndex())
+//        //
+//        CircularListWithTail clwt = new CircularListWithTail( STARTINDEX, arrayList);
+//        int count = 0;
+//        int stop = 12;
+//        Integer int_1 = 0;
+//        ListIterator<CircularListWithTail> iter = clwt.listIterator();
+//        while (iter.hasNext()) {
+//            System.out.println("nextIndex is: " + iter.nextIndex());
+//            System.out.println("Value is: " + clwt.get(iter.nextIndex()));
+//            iter.next();
+//            if (++count == stop) {break;}
+//        }
+//    }
 }

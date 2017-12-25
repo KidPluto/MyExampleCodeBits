@@ -180,16 +180,23 @@ public final class CircularListWithTail<T> extends AbstractSequentialList<T> {
             }
 
             @Override
+            // https://docs.oracle.com/javase/7/docs/api/java/util/ListIterator.html#add(E)
+            // The element is inserted immediately before the element that would be returned by
+            // next(), if any, and after the element that would be returned by previous(), if any.
             public void add(T e) {
                 actualIterator.add(e);
             }
 
             @Override
+            // https://docs.oracle.com/javase/7/docs/api/java/util/ListIterator.html#remove()
+            // Removes from the list the last element that was returned by next() or previous()
             public void remove() {
                 actualIterator.remove();
             }
 
             @Override
+            // https://docs.oracle.com/javase/7/docs/api/java/util/ListIterator.html#set(E)
+            // Replaces the last element returned by next() or previous() with the specified element
             public void set(T e) {
                 actualIterator.set(e);
             }
