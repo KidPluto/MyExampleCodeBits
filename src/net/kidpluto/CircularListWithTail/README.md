@@ -23,9 +23,24 @@ Problem #5
 ----------
 I am able to do this, and get the value printed out. 
 ````java
-            System.out.println("Index and value: " + index++ + " " + itor.next());
+System.out.println("Index and value: " + index++ + " " + itor.next());
 ````
 But I am not able to do this
 ````java
 Integer theNextValue = itor.next();
+````
+Maybe I need to do this?
+````java
+Integer theNextValue = (Integer)clwt.get(theNextIndex);
+````
+Problem #6
+----------
+These assertTrue statements break, really no idea why.
+````java
+int theNextIndex = itor.nextIndex();
+Integer theNextValue = (Integer)clwt.get(theNextIndex);
+System.out.println("theNextValue: " + theNextValue);
+// These break
+//        assertTrue(theNextValue.equals(105));
+//        assertTrue(theNextValue == 105);
 ````

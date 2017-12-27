@@ -203,10 +203,11 @@ public final class CircularListWithTail<T> extends AbstractSequentialList<T> {
         };
     }
     @Override
+    // Added by KidPluto
     public String toString(){
         StringBuffer sb = new StringBuffer();
-        for(int i = 0; i < 10; i++) {
-            sb.append(actualList.get(i));
+        for(int i = 0; i < actualList.size(); i++) {
+            sb.append("Element [" + i + "] is " + actualList.get(i) + System.getProperty("line.separator"));
         }
         return sb.toString();
     }
