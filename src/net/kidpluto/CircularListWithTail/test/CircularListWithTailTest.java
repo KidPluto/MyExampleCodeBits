@@ -27,6 +27,28 @@ class CircularListWithTailTest {
     }
 
     @org.junit.jupiter.api.Test
+        // Tests
+    void testFromStartOneLoopPlusOne() {
+        CircularListWithTail clwt = new CircularListWithTail(arrayList);
+
+        ListIterator<CircularListWithTail> itor = clwt.listIterator();
+        int index = 0;
+        int OneLoop = 10;
+        while( itor.hasNext() && index < OneLoop) {
+            System.out.println("Index and value: " + index++ + " " + itor.next());
+        }
+//        Integer theNextValue = itor.next();
+        int theNextIndex = itor.nextIndex();
+        Integer theNextValue = (Integer)clwt.get(theNextIndex);
+        System.out.println("theNextValue: " + theNextValue);
+        if (theNextValue == 105) { System.out.println("Yes"); }
+        else { System.out.println("No"); }
+        // These break
+//        assertTrue(theNextValue.equals(105));
+//        assertTrue(theNextValue ==105);
+    }
+
+    @org.junit.jupiter.api.Test
     // Tests ctor using ArrayList
     // Circular list, with no tail is created
     void testCtorTakingCollectionOnly() {

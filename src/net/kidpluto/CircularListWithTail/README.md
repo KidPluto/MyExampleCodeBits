@@ -18,3 +18,14 @@ Problem #4
 ----------
 .toString seems to get into an infinate loop
 And my first attempt at writing this doesn't look like it works either.
+
+Problem #5
+----------
+I am able to do this, and get the value printed out. 
+````java
+            System.out.println("Index and value: " + index++ + " " + itor.next());
+````
+But I am not able to do this
+````java
+Integer theNextValue = itor.next();
+````
