@@ -16,4 +16,8 @@ public class NumberToNumerial {
     public String getNumerial() {
         return numerial;
     }
+
+    public String toString() {
+        return ("[" + number + "] [" + numerial + "] ");
+    }
 }
