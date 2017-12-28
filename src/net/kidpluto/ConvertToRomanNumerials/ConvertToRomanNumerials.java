@@ -19,6 +19,7 @@ public class ConvertToRomanNumerials {
                 for (int i = 0; i < value; i++) {
                     romanValue.append(ntn.getNumerial());
                 }
+                // Adjust the number, by subtracting ...
                 number -= divideBy*value;
             }
         }
