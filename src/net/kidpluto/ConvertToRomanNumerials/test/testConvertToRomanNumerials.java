@@ -18,12 +18,10 @@ public class testConvertToRomanNumerials {
 
     @org.junit.jupiter.api.Test
         // Tests
-    void test49() {
-    System.out.println("Testing converting 49");
-
+    void test33() {
+        int toConvert = 33;
+        System.out.println("Testing converting " + toConvert);
         ConvertToRomanNumerials ctrn = new ConvertToRomanNumerials();
-        int toConvert = 49;
-//        System.out.println("Input is: " + toConvert + ", result is: " + ctrn.calculate(175, ml));
-        assertEquals(ctrn.calculate(toConvert, mappingList), "XLC");
+        assertEquals("XXXIII", ctrn.calculate(toConvert, mappingList));
     }
 }
