@@ -4,16 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Friends {
+public class GetFriends {
 
     private List<Friend> friendList;
 
     public static void main (String args []) {
-        Friends friends = new Friends();
+        GetFriends friends = new GetFriends(99);
         System.out.println(friends.toString());
     }
 
-    public Friends() {
+    public GetFriends(int id) {
+        int dummyId = id;
+
+        // TODO have a database, which you would use "id" to get list of ids which are the friends
+
+        // Hardcoded
         friendList = new ArrayList<>();
         friendList.add(new Friend(55));
         friendList.add(new Friend(66));
