@@ -1,5 +1,9 @@
 package net.kidpluto.RecommendProducts;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+
 public class FirstAttempt {
 
     public FirstAttempt() {}
@@ -12,7 +16,22 @@ public class FirstAttempt {
     public void doIt() {
         int dummyId = 99;
         GetFriends friends = new GetFriends(dummyId);
-//        List<Friend> friendsList = friends.getFriendList();
         System.out.println("List of friends: " + friends);
+
+        // Cheat
+        // How do I create a list of products, which is different for each Friend?
+
+        List<Products> masterProductsList = new ArrayList<>();
+
+        int count = 0;
+        ListIterator iterator = friends.getFriendList().listIterator();
+        while(iterator.hasNext()) {
+            Friend friend = (Friend)iterator.next();
+            // Cheat
+            Products products = new Products();
+            // Traverse the list of friends, getting the products they have bought
+            // getProducts given person id, returns products bought
+            // for each product, increment it's count on the master list, or add it if new
+        }
     }
 }

@@ -20,9 +20,9 @@ public class GetFriends {
 
         // Hardcoded
         friendList = new ArrayList<>();
-        friendList.add(new Friend(55));
-        friendList.add(new Friend(66));
-        friendList.add(new Friend(77));
+        friendList.add(new Friend(55, "Joe"));
+        friendList.add(new Friend(66, "Sally"));
+        friendList.add(new Friend(77, "Will"));
     }
     public List<Friend> getFriendList() {
         return friendList;
@@ -32,7 +32,9 @@ public class GetFriends {
         StringBuilder sb = new StringBuilder();
         ListIterator<Friend> iterator = friendList.listIterator();
         while (iterator.hasNext()) {
-            sb.append(iterator.next().getId());
+            Friend friend = iterator.next();
+            sb.append(friend.getId());
+            sb.append(friend.getName());
             sb.append(System.getProperty("line.separator"));
         }
         return sb.toString();
