@@ -1,7 +1,7 @@
 Convert number to roman numerial notation
 ==========================================
 
-  * https://www.romannumerals.org/
+  * Reminder, for what roman numerial notation is https://www.romannumerals.org/
   * Run testConvertToRomanNumerials to see the code work. Although nothing is printed, as all the tests pass.
   * Tips for solving the problem: 
     * Start out using IIII for 4 and VIIII for 9.  
