@@ -1,14 +1,14 @@
 package net.kidpluto.RomanNumeralsConverter.test;
 
 import net.kidpluto.RomanNumeralsConverter.ConvertToRomanNumerials;
-import net.kidpluto.RomanNumeralsConverter.ThePairsList;
+import net.kidpluto.RomanNumeralsConverter.NumberAndRomanNumerialPairsList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class testConvertToRomanNumerials {
 
-    private ThePairsList mappingList = new ThePairsList();
+    private NumberAndRomanNumerialPairsList mappingList = new NumberAndRomanNumerialPairsList();
 
     @org.junit.jupiter.api.BeforeAll
     static void beforeAll() {

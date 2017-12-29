@@ -6,22 +6,23 @@ public class ConvertToRomanNumerials {
 
     public ConvertToRomanNumerials() {}
 
-    public String calculate (int number, ThePairsList ml) {
+    public String calculate (int number, NumberAndRomanNumerialPairsList numberAndRomanNumerialPairsList) {
 
-        StringBuilder romanValue = new StringBuilder();
-        ThePairs ntn;
-        ListIterator<ThePairs> itor = ml.getList().listIterator();
-        while (itor.hasNext()) {
-            ntn = itor.next();
-            int divideBy = ntn.getNumber();
+        StringBuilder romanNumerial = new StringBuilder();
+        NumberAndRomanNumberialPairs numberAndRomanNumberialPairs;
+        ListIterator<NumberAndRomanNumberialPairs> iterator =
+                numberAndRomanNumerialPairsList.getList().listIterator();
+        while (iterator.hasNext()) {
+            numberAndRomanNumberialPairs = iterator.next();
+            int divideBy = numberAndRomanNumberialPairs.getNumber();
             int divResult = number / divideBy;
             if (divResult > 0) {
                 for (int i = 0; i < divResult; i++) {
-                    romanValue.append(ntn.getNumerial());
+                    romanNumerial.append(numberAndRomanNumberialPairs.getRomanNumerial());
                     number -= divideBy;
                 }
             }
         }
-        return romanValue.toString();
+        return romanNumerial.toString();
     }
 }
