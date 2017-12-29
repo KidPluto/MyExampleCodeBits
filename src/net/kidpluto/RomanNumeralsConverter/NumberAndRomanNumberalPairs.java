@@ -4,11 +4,11 @@ package net.kidpluto.RomanNumeralsConverter;
 // 10 is the number which is used to divided by
 // X is the value to replace with
 //
-public class NumberAndRomanNumberialPairs {
+public class NumberAndRomanNumberalPairs {
     private int number;
     private String romanNumerial;
 
-    NumberAndRomanNumberialPairs(int number, String numerial) {
+    NumberAndRomanNumberalPairs(int number, String numerial) {
         this.number = number;
         this.romanNumerial = numerial;
     }

@@ -1,14 +1,14 @@
 package net.kidpluto.RomanNumeralsConverter.test;
 
-import net.kidpluto.RomanNumeralsConverter.ConvertToRomanNumerials;
-import net.kidpluto.RomanNumeralsConverter.NumberAndRomanNumerialPairsList;
+import net.kidpluto.RomanNumeralsConverter.ConvertToRomanNumerals;
+import net.kidpluto.RomanNumeralsConverter.NumberAndRomanNumeralPairsList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class testConvertToRomanNumerials {
+public class testConvertToRomanNumerals {
 
-    private NumberAndRomanNumerialPairsList mappingList = new NumberAndRomanNumerialPairsList();
+    private NumberAndRomanNumeralPairsList mappingList = new NumberAndRomanNumeralPairsList();
 
     @org.junit.jupiter.api.BeforeAll
     static void beforeAll() {
@@ -18,7 +18,7 @@ public class testConvertToRomanNumerials {
     @org.junit.jupiter.api.Test
     void runTheTest() {
 
-        ConvertToRomanNumerials convert = new ConvertToRomanNumerials();
+        ConvertToRomanNumerals convert = new ConvertToRomanNumerals();
 
         assertEquals("I", convert.calculate(1, mappingList));
         assertEquals("II", convert.calculate(2, mappingList));

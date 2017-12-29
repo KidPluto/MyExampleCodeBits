@@ -1,13 +1,13 @@
-Convert number to roman numerial notation
+Convert number to roman numeral notation
 ==========================================
 
   * Reminder, for what roman numerial notation is https://www.romannumerals.org/
   
-  * Run testConvertToRomanNumerials to see the code work. Although nothing is printed, as all the tests pass.
+  * Run testConvertToRomanNumerals to see the code work. Although nothing is printed, as all the tests pass.
   * Tips for solving the problem: 
     * Start out using IIII for 4 and VIIII for 9.  
     * If you have that working, adding the pairs of "4 IV" and "9 IX" to ThePairsList should work with no code changes.
-  * Junit code from testConvertToRomanNumerials.java
+  * Junit code from testConvertToRomanNumerals.java
 ```java
         assertEquals("I", convert.calculate(1, mappingList));
         assertEquals("II", convert.calculate(2, mappingList));
