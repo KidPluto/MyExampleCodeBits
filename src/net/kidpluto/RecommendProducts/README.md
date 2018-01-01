@@ -7,6 +7,9 @@ Two methods / operations
   * getFriends given person id, returns friends 
   * getProducts given person id, returns products bought
   
+Good code examples
+  * http://www.mkyong.com/java/java-object-sorting-example-comparable-and-comparator/
+
 Search method from Collections 
   * https://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#sort(java.util.List)  
   

@@ -2,7 +2,7 @@ package net.kidpluto.RecommendProducts;
 
 import java.util.*;
 
-public class Product {
+public class Product implements Comparable<Product> {
 
     private int id;
     private String description;
@@ -40,6 +40,13 @@ public class Product {
         sb.append(count);
         sb.append(System.getProperty("line.separator"));
         return sb.toString();
+    }
+    // Needed to implement Comparable
+    @Override
+    public int compareTo(Product product) {
+        int compareProducts = ((Product) product).getCount();
+        // return this.id - compareProducts;
+        return compareProducts - this.id;
     }
     // Only using the id attribute
     @Override
