@@ -19,8 +19,7 @@ Sort
 public static <T extends Comparable<? super T>> void sort(List<T> list)
 
 Sorts the specified list into ascending order, according to the natural ordering of its elements. All elements in 
-the list must implement the Comparable interface. Furthermore, all elements in the list must be mutually comparable 
-(that is, e1.compareTo(e2) must not throw a ClassCastException for any elements e1 and e2 in the list).
+the list must implement the Comparable interface. 
 
 This sort is guaranteed to be stable: equal elements will not be reordered as a result of the sort.
 
@@ -35,10 +34,6 @@ to n/2 object references for randomly ordered input arrays.
 The implementation takes equal advantage of ascending and descending order in its input array, and can take 
 advantage of ascending and descending order in different parts of the same input array. It is well-suited to 
 merging two or more sorted arrays: simply concatenate the arrays and sort the resulting array.
-
-The implementation was adapted from Tim Peters's list sort for Python ( TimSort). It uses techiques from Peter 
-McIlroy's "Optimistic Sorting and Information Theoretic Complexity", in Proceedings of the Fourth Annual ACM-SIAM 
-Symposium on Discrete Algorithms, pp 467-474, January 1993.
 
 This implementation dumps the specified list into an array, sorts the array, and iterates over the list resetting 
 each element from the corresponding position in the array. This avoids the n2 log(n) performance that would result 
