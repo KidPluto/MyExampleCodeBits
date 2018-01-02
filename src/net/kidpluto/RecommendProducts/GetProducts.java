@@ -2,11 +2,11 @@ package net.kidpluto.RecommendProducts;
 
 import java.util.List;
 
-public class Products {
+public class GetProducts {
 
     private List<Product> productList;
 
-    public Products() {}
+    public GetProducts() {}
 
     public void setProductList(List<Product> productList) {
         this.productList = productList;

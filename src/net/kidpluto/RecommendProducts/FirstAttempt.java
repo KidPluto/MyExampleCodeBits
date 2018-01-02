@@ -21,14 +21,14 @@ public class FirstAttempt {
         // Cheat
         // How do I create a list of products, which is different for each Friend?
 
-        List<Products> masterProductsList = new ArrayList<>();
+        List<GetProducts> masterProductsList = new ArrayList<>();
 
         int count = 0;
         ListIterator iterator = friends.getFriendList().listIterator();
         while(iterator.hasNext()) {
             Friend friend = (Friend)iterator.next();
             // Cheat
-            Products products = new Products();
+            GetProducts products = new GetProducts();
             // Traverse the list of friends, getting the products they have bought
             // getProducts given person id, returns products bought
             // for each product, increment it's count on the master list, or add it if new

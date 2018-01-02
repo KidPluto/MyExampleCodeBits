@@ -8,7 +8,8 @@ public class Product implements Comparable<Product> {
     private String description;
 
     // This attribute is used when the product is in a list
-    // and the frequency of the product is needed to be know.
+    // and you don't want duplicate items.
+    // What other ways are there of doing this?
     private int count;
 
     public Product(int id, String description) {
@@ -22,13 +23,13 @@ public class Product implements Comparable<Product> {
     public String getDescription() {
         return description;
     }
-//    public void setCount (int count) {
-//        this.count = count;
-//    }
+
     // Only used for junit?
     public int getCount () {
         return count;
     }
+    // This method is used when the product is in a list
+    // and you don't want duplicate items.
     public void incrementCount() {
         count++;
     }
@@ -41,11 +42,13 @@ public class Product implements Comparable<Product> {
         sb.append(System.getProperty("line.separator"));
         return sb.toString();
     }
-    // Needed to implement Comparable
+    // Method required to implement Comparable
     @Override
     public int compareTo(Product product) {
         int compareProducts = ((Product) product).getCount();
+        // Creates acending list
         // return this.id - compareProducts;
+        // Create descending list
         return compareProducts - this.id;
     }
     // Only using the id attribute
@@ -61,54 +64,7 @@ public class Product implements Comparable<Product> {
     public int hashCode() {
         return Objects.hash(id);
     }
-    public static void main (String arg []) {
-//        Product product_01 = new Product(1, "Book: The Tides of Time");
-//        Product product_02 = new Product(2, "Book: Wormword, Your Best Solution for Cabinents");
-//        Product product_03 = new Product(3, "Toy: Little Boy Craine");
-//        Product product_04 = new Product(1, "Cell phone: Motorola 34j5");
-//
-//        List<Product> productList = new LinkedList<>();
-//
-//        // Returns -1 if not in list
-//        int indexOf = productList.indexOf(product_01);
-//
-//        if (indexOf!=-1) {
-//            productList.get(indexOf).incrementCount();
-//        }
-//        else {
-//            productList.add(product_01);
-//        }
-//
-//        indexOf = productList.indexOf(product_02);
-//
-//        if (indexOf!=-1) {
-//            productList.get(indexOf).incrementCount();
-//        }
-//        else {
-//            productList.add(product_02);
-//        }
-//
-//        indexOf = productList.indexOf(product_03);
-//
-//        if (indexOf!=-1) {
-//            productList.get(indexOf).incrementCount();
-//        }
-//        else {
-//            productList.add(product_03);
-//        }
-//
-//        indexOf = productList.indexOf(product_04);
-//
-//        if (indexOf!=-1) {
-//            productList.get(indexOf).incrementCount();
-//        }
-//        else {
-//            productList.add(product_04);
-//        }
-//
-//        ListIterator<Product> iterator = productList.listIterator();
-//        while (iterator.hasNext()) {
-//            System.out.println(iterator.next().toString());
-//        }
-    }
+//    public static void main (String arg []) {
+//        // See testProduct.java
+//    }
 }
