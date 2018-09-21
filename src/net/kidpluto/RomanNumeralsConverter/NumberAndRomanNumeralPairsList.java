@@ -30,7 +30,7 @@ public class NumberAndRomanNumeralPairsList {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         NumberAndRomanNumberalPairs ntn;
-        ListIterator itor = romanSigns.listIterator();
+        ListIterator<NumberAndRomanNumberalPairs> itor = romanSigns.listIterator();
         while(itor.hasNext()) {
             ntn = (NumberAndRomanNumberalPairs) itor.next();
             sb.append(ntn.toString());
