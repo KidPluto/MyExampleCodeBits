@@ -1,7 +1,6 @@
-# MyExampleCodeBits
-A place for misc code
-
-https://github.com/KidPluto/MyExampleCodeBits/blob/master/src/net/kidpluto/CircularListWithTail/README.md
+# My Example Code Bits
+---
+* [Circular List With Tail](https://github.com/KidPluto/MyExampleCodeBits/blob/master/src/net/kidpluto/CircularListWithTail/README.md)
 
 https://github.com/KidPluto/MyExampleCodeBits/tree/master/src/net/kidpluto/ConsumeString
 
