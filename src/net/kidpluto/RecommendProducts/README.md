@@ -15,3 +15,6 @@ Search method from Collections
   
 Revisiting this post years later I am horrified at the options available in Java to do this work. A quick search shows me why I now love Kotlin.
   * https://www.bezkoder.com/kotlin-sort-list/
+
+It gets a little uglier when you need to sort by more than one field, but still prettier than Java
+  * https://www.bezkoder.com/kotlin-sort-list-objects/
