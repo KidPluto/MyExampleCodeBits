@@ -18,3 +18,6 @@ Revisiting this post years later I am horrified at the options available in Java
 
 It gets a little uglier when you need to sort by more than one field, but still prettier than Java
   * https://www.bezkoder.com/kotlin-sort-list-objects/
+
+Some more examples
+  * https://www.codevscolor.com/kotlin-5-ways-sort-list-ascending-descending
