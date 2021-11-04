@@ -21,3 +21,5 @@ It gets a little uglier when you need to sort by more than one field, but still 
 
 Some more examples
   * https://www.codevscolor.com/kotlin-5-ways-sort-list-ascending-descending
+
+Thinking back, I think the original question was from an in person interview.  Don't remember anythig about the interview, not even how I answered the question.  But I am wondering why here I was documenting sorts are the answer.  Looking at the question now I would think that the data would be in a database, and the answer would be two different selects.
