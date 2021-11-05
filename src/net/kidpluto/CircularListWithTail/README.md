@@ -1,7 +1,7 @@
 Circular List with Tail
 =======================
 
-To address the original question "given you have a list which last element points to some other element in the list, how would you figure out what element that is?"
+To address the original question "given you have a list in which the last element points to some other element in the list, how would you figure out what element that is?"
   * Have two iterators. Iterator #1 takes one step, while iterator #2 takes two steps.  At some point they will be pointing to the same node?
   * Have two iterators. For each step iterator #1 takes, iterator #2 travels the size+1, you check if they are pointing to the same node.
   * Have a backing list, for which you have a pointer for every element in the list.  Then you .... ?
