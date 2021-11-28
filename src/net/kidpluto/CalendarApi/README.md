@@ -124,7 +124,8 @@ Suggestions of additional functionality are welcome.
 
       @PUT @Path("/sync/calendars") 
       @Produces(MediaType.APPLICATION_XML) 
-      @Consumes(MediaType.APPLICATION_FORM_URLENCODED) Response syncCalendars( 
-      @FormParam("calenderOneId") int calendarOneId, 
-      @FormParam("calendarTwoId") int calendarTwoId); 
+      @Consumes(MediaType.APPLICATION_FORM_URLENCODED) 
+      Response syncCalendars( 
+          @FormParam("calenderOneId") int calendarOneId, 
+          @FormParam("calendarTwoId") int calendarTwoId); 
     }
