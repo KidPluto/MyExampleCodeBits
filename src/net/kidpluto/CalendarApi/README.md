@@ -78,6 +78,7 @@ Suggestions of additional functionality are welcome.
 * Sync calendars - tests CalenderSyncJob 
   * Meetings copied between calendars 
 
+******
 
     @Path("/calendar") 
     public interface Calendar { 
